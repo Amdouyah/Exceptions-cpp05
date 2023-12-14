@@ -3,18 +3,17 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main(){
 	try{
-		Bureaucrat bure(6, "obj");
-		// std::cout << bure.getName() << std::endl;
-		// std::cout << bure.getGrade() <<std::endl;
-		
-		ShrubberyCreationForm shrubberycreation("hasan");
-		shrubberycreation.beSigned(bure);
-		bure.signForm(shrubberycreation);
-
-		shrubberycreation.execute(bure);
+		Bureaucrat bure(1, "obj");
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+		rrf->beSigned(bure);
+		bure.signForm(*rrf);
+		rrf->execute(bure);
 	}
 	catch(const std::exception& e){
 		std::cerr << "error: "<< e.what() << std::endl;
