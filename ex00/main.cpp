@@ -6,7 +6,7 @@ int main(){
 		std::cout << bure.getName() << std::endl;
 		std::cout << bure.getGrade() <<std::endl;
 	}
-	catch(const std::exception& e){
+	catch(std::exception const& e){
 		std::cerr << "error: "<< e.what() << std::endl;
 	}
 	return 0;

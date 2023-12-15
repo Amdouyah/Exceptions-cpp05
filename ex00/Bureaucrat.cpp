@@ -16,7 +16,6 @@ int Bureaucrat::getGrade()const{
 	return this->grade;
 }
 
-
 const char * Bureaucrat::GradeTooHighException::what() const throw(){
 	return "grade it to hight";
 }
